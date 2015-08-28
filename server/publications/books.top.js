@@ -1,0 +1,1 @@
+Books.where({}, { sort: { rating: -1 } }).publish('books.top');
