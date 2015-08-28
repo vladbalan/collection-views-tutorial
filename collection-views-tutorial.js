@@ -1,23 +1,16 @@
+Books = new Mongo.Collection("books");
+
 if (Meteor.isClient) {
-  // counter starts at 0
-  Session.setDefault('counter', 0);
-
-  Template.hello.helpers({
-    counter: function () {
-      return Session.get('counter');
+  Template.BooksForm.events({
+    'submit form': function (e, tmpl) {
+      e.preventDefault();
+      var doc = {};
+      _.each($(e.currentTarget).find('input'), function (input) {
+        doc[$(input).attr('name')] = $(input).val();
+      });
+      doc = _.extend(doc, { createdAt: new Date() });
+      Books.insert(doc);
+      $(e.currentTarget).find('input').val('');
     }
-  });
-
-  Template.hello.events({
-    'click button': function () {
-      // increment the counter when button is clicked
-      Session.set('counter', Session.get('counter') + 1);
-    }
-  });
-}
-
-if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
   });
 }
