@@ -4,6 +4,6 @@ Tracker.autorun(function() {
 
 Template.BooksList.helpers({
 	books: function () {
-		return Books.find();
+		return Books.find({}, { sort: { createdAt: -1 } });
 	}
 });
