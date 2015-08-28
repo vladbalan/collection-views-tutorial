@@ -1,0 +1,9 @@
+<template name="TopList">
+	<div class="row">
+		<ul class="collection">
+		{{#each books}}
+      <li class="collection-item"><div>{{title}} ({{year}}) <small>by {{author}}</small><a href="#!" class="secondary-content">{{rating}}</a></div></li>
+		{{/each}}
+    </ul>
+	</div>
+</template>
