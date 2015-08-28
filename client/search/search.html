@@ -1,0 +1,41 @@
+<template name="Search">
+  <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="title" type="text" class="validate">
+          <label for="title">Title</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="author" type="text" class="validate">
+          <label for="author">Author</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="genre" type="text" class="validate">
+          <label for="genre">Genre</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="year" type="text" class="validate">
+          <label for="year">Year</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="rating" type="text" class="validate">
+          <label for="rating">Rating</label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <ul class="collection">
+  {{#each books}}
+    <li class="collection-item"><div>{{title}} ({{year}}) <small>by {{author}}</small><a href="#!" class="secondary-content">{{rating}}</a></div></li>
+  {{/each}}
+  </ul>
+</template>
