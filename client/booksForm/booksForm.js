@@ -7,6 +7,6 @@ Template.BooksForm.events({
     });
     doc = _.extend(doc, { createdAt: new Date() });
     Books.insert(doc);
-    $(e.currentTarget).find('input').val('');
+    FlowRouter.go('/');
   }
 });
